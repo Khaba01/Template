@@ -10,6 +10,8 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
             <Button Content="Импорт данных" Margin="5" Click="Button_Click"/>
             <Button Content="Экспорт в EXCEL" Margin="5" Click="Button_Click_1"/>
+            <Button Content="Импорт JSON данных" Margin="5" Click="Button_Click_2"/>
+            <Button Content="Экспорт в WORD" Margin="5" Click="Button_Click_3"/>
         </StackPanel>
     </Grid>
 </Window>

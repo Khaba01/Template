@@ -9,19 +9,34 @@
 
 namespace Template_4337
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
     using System;
     using System.Collections.Generic;
-    
+    using static Template_4337.Gibadullin_4337;
+
     public partial class Zakazy
     {
+        [JsonProperty("Id")]
         public int id { get; set; }
+        [JsonProperty("CodeOrder")]
         public string Code { get; set; }
+        [JsonProperty("CreateDate")]
+        [JsonConverter(typeof(CustomDateTimeConverter))]
         public Nullable<System.DateTime> DateCreate { get; set; }
+        [JsonProperty("CreateTime")]
+        [JsonConverter(typeof(TimeSpanConverter))]
         public Nullable<System.TimeSpan> TimeCreate { get; set; }
+        [JsonProperty("CodeClient")]
         public string CodClient { get; set; }
+        [JsonProperty("Services")]
         public string Servic { get; set; }
+        [JsonProperty("Status")]
         public string Stat { get; set; }
+        [JsonProperty("ClosedDate")]
+        [JsonConverter(typeof(CustomDateTimeConverter))]
         public Nullable<System.DateTime> DateClose { get; set; }
+        [JsonProperty("ProkatTime")]
         public string TimeProcat { get; set; }
     }
 }
