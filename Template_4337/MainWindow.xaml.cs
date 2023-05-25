@@ -36,5 +36,10 @@ namespace Template_4337
             var window = new Gibadullin_4337();
             window.Show();
         }
+
+        private void Grigoreva_4337_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ZakazyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Statu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Stat" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Zakazy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="TimeCreate" Type="time" Precision="7" />
+          <Property Name="CodClient" Type="nvarchar" MaxLength="50" />
+          <Property Name="Servic" Type="nvarchar" MaxLength="100" />
+          <Property Name="Stat" Type="nvarchar" MaxLength="30" />
+          <Property Name="DateClose" Type="date" />
+          <Property Name="TimeProcat" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityContainer Name="Хранилище ZakazyModelContainer">
+          <EntitySet Name="Statu" EntityType="Self.Statu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zakazy" EntityType="Self.Zakazy" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZakazyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Statu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Stat" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Zakazy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="TimeCreate" Type="Time" Precision="7" />
+          <Property Name="CodClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Servic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Stat" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DateClose" Type="DateTime" Precision="0" />
+          <Property Name="TimeProcat" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ZakazyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Statu" EntityType="Self.Statu" />
+          <EntitySet Name="Zakazy" EntityType="Self.Zakazy" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ZakazyModelContainer" CdmEntityContainer="ZakazyEntities">
+          <EntitySetMapping Name="Statu">
+            <EntityTypeMapping TypeName="ZakazyModel.Statu">
+              <MappingFragment StoreEntitySet="Statu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Stat" ColumnName="Stat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zakazy">
+            <EntityTypeMapping TypeName="ZakazyModel.Zakazy">
+              <MappingFragment StoreEntitySet="Zakazy">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="TimeCreate" ColumnName="TimeCreate" />
+                <ScalarProperty Name="CodClient" ColumnName="CodClient" />
+                <ScalarProperty Name="Servic" ColumnName="Servic" />
+                <ScalarProperty Name="Stat" ColumnName="Stat" />
+                <ScalarProperty Name="DateClose" ColumnName="DateClose" />
+                <ScalarProperty Name="TimeProcat" ColumnName="TimeProcat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
